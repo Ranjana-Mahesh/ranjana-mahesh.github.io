@@ -234,3 +234,18 @@
 			}
 		}
 	}
+
+		.gallery.stacked-gallery {
+			margin-left: 0;
+			width: 100%;
+
+			a {
+				margin-left: 0;
+				width: 100%;
+
+				img {
+				height: auto;
+				min-height: 0;
+			}
+		}
+	}

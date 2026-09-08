@@ -16,28 +16,27 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				{% include intro.html %}
-				{% assign sorted_pages = site.pages | sort:"order" %}
+				{% assign sorted_pages = site.pages | sort:"order" | reverse %}
 				{% for page in sorted_pages %}
 				{% if page.layout != "section" %}
 				{% continue %}
 				{% endif %}
-				{% if page.id %}
-				<section id="{{ page.id }}">
-				{% else %}
-				<section>
-				{% endif %}
-				<header><h2> {{ page.title }} </h2></header>
-				{% if page.image %} <span class="image main"><img src="assets/images/{{ page.image }}" alt="" /></span> {% endif %}
+				<section{% if page.id %} id="{{ page.id }}"{% endif %} class="post-section">
+				{% assign content_parts = page.content | split: '<div class="gallery' %}
+				<header>
+					<h2> {{ page.title }} </h2>
+					{{ content_parts[0] }}
+				</header>
 				<div class="content">
-				{{ page.content }}
+				{% if content_parts.size > 1 %}
+				<div class="gallery{{ content_parts[1] }}
+				{% elsif page.image %}
+				<span class="image main"><img src="assets/images/{{ page.image }}" alt="" /></span>
+				{% endif %}
 				</div>
 				</section>
 
 			{% endfor %}
-
-			<!-- Includes the section with the Get Started and Learn More buttons. Couldn't get it to work on Markdown files. -->
-			{% include buttons.html %}
-
 
 			{% include message.html %} <!-- Message & footer -->
 

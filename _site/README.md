@@ -7,27 +7,29 @@ You can see how it looks [here](https://vrmiguel.github.io/paradigm-shift-jekyll
 You can use this theme locally by commenting `gem "github-pages", "~> 3.8.5"` on `Gemfile` and, uncommenting `gem "jekyll"`.
 As it stands, it's ready to use on GitHub Pages.
 
-To add your own text to the site, you've got to edit `_layout/default.html` (Markdown editing to be added soon, hopefully).
+You can add your own text to the site by modifying the dated performance files, such as `17-04-2025.md`, `21-04-2025.md`, `15-08-2026.md`, and `23-08-2026.md`. You can add as many Markdown files as you want.
 
 
-Add images to the site on `images`. 
+Add images to the site on `images`. The gallery function is set to work with two versions of the same image, one of them in full size and the other, a thumbnail.
+
 
 ### Added features
 
+* Add your social profiles to `_config.yml`. Only the ones you add to the config file will show up on the site footer. Credits to [Andrew Banchich](https://github.com/andrewbanchich) for this idea.
+
+
 * [Formspree](https://formspree.io/) integration should work automatically as soon as your email is added to the config file.
-
-
-* You can now edit the page's content through the Markdown files on the project's root directory, starting by `first.md`.
-
-
-* Pages are now ordered. You can decide which page gets included first by setting the `order` priority on the Markdown files.
 
 
 * [WhatsApp](https://api.whatsapp.com) integration works as soon as your phone is added to the config file.
    If you wish to remove either of these, Formspree integration can be removed on line 7 of `include/message.html`, while the WhatsApp link to your number can be removed on line 9.
 
 
-* Add your social profiles to `_config.yml`. Only the ones you add to the config file will show up on the site footer. Credits to [Andrew Banchich](https://github.com/andrewbanchich) for this idea.
+* You can now edit the page's content through the dated Markdown files in the project's root directory, starting with `15-08-2026.md`.
+
+
+* The order in which Markdown files are processed is now ordered. You can decide which page gets included first by setting the `order` priority on each file.
+
 
 # Credits / License
 
